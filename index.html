@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <title>Calculadora de Investimentos</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1>Simulador de Investimentos</h1>
+            <form>
+                <h3>Simulador</h3>
+                <div class="row form-group">
+                    <div class="col-sm-3">
+                        <label for="rendimento">Rendimento</label>
+                        <div class="btn-group mt-4 mb-4" role="group">
+                            <input type="radio" class="btn-check" name="rendimento" id="bruto" autocomplete="off" checked>
+                            <label class="btn btn-outline-warning" for="bruto">Bruto</label>
+                            
+                            <input type="radio" class="btn-check" name="rendimento" id="liquido" autocomplete="off">
+                            <label class="btn  btn-outline-warning" for="liquido">Liquido</label>
+                          </div>
+                        <label id="aporteInicial" for="aporteInicial">Aporte Inicial</label>
+                        <input type="number" name="aporteInicial" class="form-control mt-4 mb-4">
+                        <span class="validaporteInicial" style="display:none">Aporte deve ser um numero</span>
+                        <label id="prazo" for="prazo">Prazo (em meses)</label>
+                        <input type="number" name="prazo" class="form-control mt-4 mb-4">
+                        <span class="validprazo"  style="display:none">Prazo deve ser um numero</span>
+                        <label for="ipca">IPCA (ao ano)</label>
+                        <input type="number" name="ipca" id="ipca" class="form-control mt-4">
+
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="indexacido">Tipo de indexação</label>
+                        <div class="btn-group mt-4 mb-4" role="group">
+                            <input type="radio" class="btn-check" name="indexacao" id="pre" autocomplete="off" checked>
+                            <label class="btn btn-outline-warning" for="pre">PRÉ</label>
+                          
+                            <input type="radio" class="btn-check" name="indexacao" id="pos" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="pos">PÓS</label>
+                          
+                            <input type="radio" class="btn-check" name="indexacao" id="fixado" autocomplete="off">
+                            <label class="btn btn-outline-warning" for="fixado">FIXADO</label>
+                          </div>
+                        <label id="aporteMensal" for="aporteMensal">Aporte Mensal</label>
+                        <input type="number" name="aporteMensal" class="form-control mt-4 mb-4">
+                        <span class="validaporteMensal"  style="display:none">Prazo deve ser um numero</span>
+
+                        <label id="rentabilidade" for="rentabilidade">Rentabilidade (em meses)</label>
+                        <input type="number" name="rentabilidade" class="form-control mt-4 mb-4" >
+                        <span class="validrentabilidade"  style="display:none">Rentabilidadede ser um numero</span>
+
+                        <label for="cdi">CDI (ao ano)</label>
+                        <input type="text" name="cdi" id="cdi" class="form-control mt-4">
+                    </div>
+                </div>
+                <div class="buttons mt-4">
+                    <button type="button" class="btn btn-outline-secondary">Limpar dados</button>
+                    <button type="button" class="btn btn-secondary" onclick="validateForm()">Simular</button>
+                </div>
+            </form>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="./main.js"></script>
+    </body>
+</html>
