@@ -1,13 +1,24 @@
-.container {
+.container-xl {
     background-color: #d2d2d2;
 }
 
-.container h1 {
+.container-xl h1 {
     text-align: center;
     padding: 10px;
 }
 
-.col-sm-3 {
+.col-xl-5 {
+   width:37%
+}
+
+.row {
+    margin: 10px 0px;
+    width: 100%;
+}
+.form-group{
+    margin-left: 15px
+}
+.col-xl-2 {
     display: flex;
     flex-direction: column;
 }
@@ -64,10 +75,11 @@ label {
 }
 
 .buttons button {
-    width: 23%;
+    width: 16%;
     height: 50px;
+    font-size: 18px;
     border-radius:10px;
-    margin: 20px 10px
+    margin: 20px 9px
 }
 
 .btn-outline-secondary, .btn-secondary{
@@ -90,4 +102,28 @@ label {
 
 span {
     color: red;
+}
+
+.col-xl-4{
+    width: 30%;
+    height:100px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 10px 0px 10px 20px;
+    background-color:white;
+    border-radius:20px
+}
+
+.col-xl-4 label {
+    margin:15px 0px; 
+    font-size: 14px;
+}
+
+#finalLiquido, #ganho {
+    color: green;
+}
+
+.col-xl-4 h5 {
+    font-weight: bold; 
 }
