@@ -1,5 +1,6 @@
 .container-xl {
     background-color: #d2d2d2;
+    margin-top:1.5rem;
 }
 
 .container-xl h1 {
@@ -63,10 +64,18 @@ label {
 
 }
 
+.btn-check:checked + label:before{
+    content: "✓ ";
+    font-weight: bold;
+}
 .btn-check:hover + .btn-outline-warning {
     background-color:rgb(218, 124, 42);;
     color: white;
     box-shadow: 0 0 0 0;
+}
+
+.btn-group {
+    display: flex;
 }
 
 .buttons {
@@ -93,6 +102,7 @@ label {
 
 .btn-secondary:hover, .btn-outline-secondary:hover{
     background-color: rgb(218, 124, 42);
+    color: black;
 
 }
 
@@ -126,4 +136,35 @@ span {
 
 .col-xl-4 h5 {
     font-weight: bold; 
+}
+
+.active{
+    visibility: inherit;
+}
+
+.notCheck {
+    visibility: hidden;
+}
+
+@media(max-width:1200px) {
+    .container-xl{
+        margin-top: 0px;
+    }
+
+    .form-group {
+        margin-left: 0px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .col-xl-8 {
+        margin-top: 40px;
+    }
+
+    .col-xl-4 {
+        width: 100%;
+        margin-left: 0px;
+    }
 }
