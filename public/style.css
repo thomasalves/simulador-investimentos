@@ -1,3 +1,6 @@
+/*!****************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/assets/css/style.css ***!
+  \****************************************************************************/
 .container-xl {
     background-color: #d2d2d2;
     margin-top:1.5rem;
@@ -112,6 +115,7 @@ label {
 
 span {
     color: red;
+    font-size: 12px;
 }
 
 .col-xl-4{
@@ -145,6 +149,8 @@ span {
 .notCheck {
     visibility: hidden;
 }
+
+span
 
 @media(max-width:1200px) {
     .container-xl{

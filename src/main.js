@@ -1,8 +1,22 @@
+import './assets/css/style.css';
+
 let rendimentoEscolhido;
 let indexacaoEscolhido;
 $(function() {
     getIndicadores()
-   
+})
+let btnsimular = document.getElementById('simular');
+btnsimular.onclick = function teste() {
+    console.log('oi')
+    simular()
+}
+
+let btnLimpar = document.getElementById('limpar');
+btnLimpar.addEventListener('click', function() {
+   document.getElementsByName("aporteInicial")[0].value = '';
+   document.getElementsByName("prazo")[0].value = '';
+   document.getElementsByName("aporteMensal")[0].value = '';
+   document.getElementsByName("rentabilidade")[0].value = '';
 })
 
 function validateForm() {
@@ -39,8 +53,6 @@ async function getIndicadores () {
         }
     })
 }
-
-
 
 async function simular() {
     tiposSimulacao();
@@ -95,38 +107,38 @@ function renderCards(obj) {
     limparCampos(ganhoLiquido)
  
 
-    labelValorBruto = document.createElement('label');
+    const labelValorBruto = document.createElement('label');
     labelValorBruto.innerHTML = 'Valor Final Bruto';
 
     const valorBruto = document.createElement('h5');
     valorBruto.innerHTML = `R$ ${obj.valorFinalBruto}`;
 
-    labelAliquota = document.createElement('label');
+    const labelAliquota = document.createElement('label');
     labelAliquota.innerHTML = 'Alíquota do IR';
 
     const aliquota = document.createElement('h5');
     aliquota.innerHTML = `${obj.aliquotaIR}%`;
 
-    labelValorPagoIR = document.createElement('label');
+    const labelValorPagoIR = document.createElement('label');
     labelValorPagoIR.innerHTML = 'Valor Pago em IR';
 
     const ValorPagoIr = document.createElement('h5');
     ValorPagoIr.innerHTML = `R$ ${obj.valorPagoIR}`;
 
-    labelFinalLiquido  = document.createElement('label');
+    const labelFinalLiquido  = document.createElement('label');
     labelFinalLiquido.innerHTML = 'Valor Final Líquido';
 
     const finalLiquido = document.createElement('h5');
     finalLiquido.innerHTML = `R$ ${obj.valorFinalLiquido}`;
     finalLiquido.id = 'finalLiquido'
 
-    labelValorTotal = document.createElement('label');
+    const labelValorTotal = document.createElement('label');
     labelValorTotal.innerHTML = 'Valor Total Investido';
 
     const valorTotal = document.createElement('h5');
     valorTotal.innerHTML = `R$ ${obj.valorTotalInvestido}`;
 
-    labelGanhoLiquido = document.createElement('label');
+    const labelGanhoLiquido = document.createElement('label');
     labelGanhoLiquido.innerHTML = 'Ganho Líquido';
 
     const GanhoLiquido = document.createElement('h5');
@@ -150,27 +162,10 @@ function renderCards(obj) {
 }
 
 function rendeGrafico (array) {
-    console.log(array.comAporte[1]);
-    var arrayComAporte = [];
-    var arraySemAporte = [];
-    for(let i=0; i<10; i++) {
-        arrayComAporte.push([array.comAporte[i]])
-        arraySemAporte.push([array.semAporte[i]])
-        console.log(array.comAporte[i])
 
-    }
-    console.log(arrayComAporte,arraySemAporte);
-
-
-    // Load the Visualization API and the corechart package.
     google.charts.load('current', {'packages':['corechart']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawChart);
 
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
     function drawChart() {
         // Create the data table.
         var data = google.visualization.arrayToDataTable([
@@ -190,26 +185,33 @@ function rendeGrafico (array) {
 
         // Set chart options
         var options = {
-            width: 800,
             height: 200,
             title: "Projeção de Valores",
-            legend: { position: 'bottom', maxLines: 4 },
+            colors: ['#000', '#da7c2a'],
+            legend: { position: 'bottom',},
             bar: { groupWidth: '75%' },
             isStacked: true,
             vAxis: {
-                title: 'Valor (R$)'
+                title: 'Valor (R$)',
+                gridlines: {
+                    color: 'transparent'
+                }
               },
             hAxis: {
-                title: "Tempo (meses)"
-            }
-              
+                title: "Tempo (meses)",
+            },
+            backgroundColor: {
+                fill: '#d2d2d2',
+                fillOpacity: 0.8
+              },
+             
           };
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.ColumnChart(document.getElementById('grafico'));
         chart.draw(data, options);
     } 
+    window.addEventListener('resize', drawChart, true);
 }
-
 
 function limparCampos(parent) {
     while(parent.firstChild){

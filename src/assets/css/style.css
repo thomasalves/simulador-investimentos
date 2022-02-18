@@ -1,0 +1,192 @@
+.container-xl {
+    background-color: #d2d2d2;
+    margin-top:1.5rem;
+}
+
+.container-xl h1 {
+    text-align: center;
+    padding: 10px;
+}
+
+.col-xl-5 {
+   width:37%
+}
+
+.row {
+    margin: 0px 15px;
+    width: 100%;
+}
+.form-group{
+    margin-left: 15px
+}
+.col-xl-2 {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size:15px;
+    font-weight: bold;
+}
+
+.form-control {
+    background-color: #d2d2d2;
+    border-bottom: 1px solid black;
+}
+
+.form-control:focus{
+    box-shadow: 0 0 0 0;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: 0;
+    background-color: #d2d2d2;
+}
+
+.btn-outline-warning {
+    width:100%;
+    border-color:black;
+    color: black;
+    height: 50px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.btn-check:checked  ~ .btn-outline-warning {
+    border-color:black;
+    box-shadow: 0 0 0 0;
+
+}
+
+.btn-check:checked  + .btn-outline-warning {
+   background-color: rgb(218, 124, 42);
+   color: white;
+
+}
+
+.btn-check:checked + label:before{
+    content: "✓ ";
+    font-weight: bold;
+}
+.btn-check:hover + .btn-outline-warning {
+    background-color:rgb(218, 124, 42);;
+    color: white;
+    box-shadow: 0 0 0 0;
+}
+
+.btn-group {
+    display: flex;
+}
+
+.buttons {
+    display: flex;
+    justify-content:left;
+}
+
+.buttons button {
+    width: 16%;
+    height: 50px;
+    font-size: 18px;
+    border-radius:10px;
+    margin: 0px 10px 20px 10px
+}
+
+.btn-outline-secondary, .btn-secondary{
+    color: #000000;
+    font-weight:bold;
+} 
+
+.btn-secondary {
+    background-color: gray
+}
+
+.btn-secondary:hover, .btn-outline-secondary:hover{
+    background-color: #da7c2a;
+    color: black;
+
+}
+
+.btn-secondary:focus, .btn-outline-secondary:focus{
+    box-shadow: 0 0 0 0;
+}
+
+span {
+    color: red;
+    font-size: 12px;
+}
+
+.col-xl-4{
+    width: 30%;
+    height:100px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin: 10px 0px 10px 20px;
+    background-color:white;
+    border-radius:20px
+}
+
+.col-xl-4 label {
+    margin:15px 0px; 
+    font-size: 14px;
+}
+
+#finalLiquido, #ganho {
+    color: green;
+}
+
+.col-xl-4 h5 {
+    font-weight: bold; 
+}
+
+.active{
+    visibility: inherit;
+}
+
+.notCheck {
+    visibility: hidden;
+}
+
+#resultado {
+    padding: 10px
+}
+
+#labelResultado {
+    margin-left: 20px;
+}
+
+
+@media(max-width:1200px) {
+    .container-xl{
+        margin-top: 0px;
+    }
+
+    .form-group {
+        margin-left: 0px;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .col-xl-8 {
+        margin-top: 40px;
+    }
+
+    .col-xl-4 {
+        width: 100%;
+        margin-left: 0px;
+    }
+
+    label {
+        font-size:13px
+    }
+    #labelResultado {
+        margin-left: 0px;
+    }
+
+    .row {
+        margin-left:0px
+    }
+
+}
